@@ -21,3 +21,7 @@ function showNumbers(countfrom) {
             }
     }, 100)
 }
+
+// Add a "Pause/Resume" button to control the countdown.
+// Allow the user to input a custom starting time.
+// Style the countdown timer with CSS to make it visually appealing.
