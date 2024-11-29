@@ -4,7 +4,7 @@
     --secondary-color: #333;
     --detail-color: #8E0606;
     --font-bright: #fff;
-    --font-daark: #000;
+    --font-dark: #000;
 }
 
 body {
@@ -27,4 +27,14 @@ h3 {
 
 p {
     padding: 0 1rem;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+}
+
+/* ========== LINKS ========== */
+a {
+    color: var(--detail-color);
 }
