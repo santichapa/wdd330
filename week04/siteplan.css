@@ -1,0 +1,30 @@
+:root {
+    font-family: "Poppins", sans-serif;
+    --primary-color: #777;
+    --secondary-color: #333;
+    --detail-color: #8E0606;
+    --font-bright: #fff;
+    --font-daark: #000;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--font-bright);
+}
+
+.divider {
+    border-bottom: 2px solid var(--detail-color);
+}
+
+h1, h2 {
+    background-color: var(--secondary-color);
+    padding: .5em;
+}
+
+h3 {
+    padding: .5em;
+}
+
+p {
+    padding: 0 1rem;
+}

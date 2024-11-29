@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project Proposal | WDD 330</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="siteplan.css">
+</head>
+<body>
+    <header><h1>Final Project Proposal</h1></header>
+    <main>
+        <section>
+            <h2>1. Overview</h2>
+            <h3>What is the problem we are trying to solve?</h3>
+            <p>There are a lot of streaming platforms with 
+                movies but clearly, they don’t have them all. 
+                So, if I want to search for a film, I need to 
+                enter all the platforms, one by one, and then 
+                choose a movie.</p>
+            <h3>Why are we doing this?</h3>
+            <p>I want a movie hub to search for popular movies 
+                classified by genre so that choosing a film to 
+                watch is easier. Then I just need to search 
+                where that movie is available to watch.</p>
+        </section>
+        <section>
+            <h2>2. Who is the audience?</h2>
+            <p>The audience is everyone looking for a good (or bad) film to watch and hard to find. The site will be in English and designed for all ages.</p>
+        </section>
+        <section>
+            <h2>3. List of the major functions of the application</h2>
+            <ul>
+                <li>getMovieData(): an asynchronous function that makes a call to the API to get a list of movies. </li>
+                <li>getMovieDetails(movieId): an asynchronous function that makes a call to the API to get a list of details for a specific movie.</li>
+                <li>renderMovieList(selector): uses a template to enter all the data from the API into the DOM</li>
+                <li>movieDetailsTemplate(movie): a function that returns a template to be used as a callback function of a render function. </li>
+                <li>movieTemplate(movie): a function that returns a template to be used as a callback function of a render function.</li>
+                <li>sortlList(): this function takes a list and sorts it with the desired order</li>
+                <li>filterByGenre(list): this functions takes a list of movies and filters it by genre.</li>
+                <li>setClick(): this function sets a listener for both touchend and click</li>
+                <li>convertToJSON(): converts a response from the API to JSON and adds a handler for errors from the response.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>4.  Wireframes of the major views</h2>
+            <ul>
+                <li>Desktop Wireframe            
+                    <img src="wireframe-desktop.jpeg" alt="wireframe for the desktop view of the site">
+                </li>
+                <li>Mobile Wireframe 
+                    <img src="wireframe-mobile.jpeg" alt="wireframe for the mobile view of the site">
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>5.	External API Data source(s):</h2>
+            <ul>
+                <li><a href="https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability/playground/apiendpoint_93e6eead-196b-49eb-b62a-cb106b99ff47">Streaming Availability API</a></li>
+                <li><a href="https://rapidapi.com/rapidapi/api/movie-database-alternative/playground/apiendpoint_4be0cbf6-94a7-4d2a-857f-e850bfe311d0">Movie Database Alternative API</a></li>
+                <li><a href="https://rapidapi.com/Glavier/api/imdb146/playground/apiendpoint_a2df8341-240c-4a42-a6e9-6c810e73acbc">IMDb API</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>6.	Initial Module list</h2>
+            <ul>
+                <li>•Index.html</li>
+                <li>•JS: MovieList, MovieDetails, MovieData</li>
+                <li>•CSS: base.css, large.css</li>
+            </ul>
+        </section>
+        <section>
+            <h2>7.	Colors/Typography/specific element styling</h2>
+            <ul>
+                <li>Colors: Primary: #777, Secondary: #333, Details: #8E0606</li>
+                <li >Typography: Poppins, sans-serif</li>
+            </ul>
+        </section>
+        <section>
+            <h2>8.	Schedule</h2>
+            <ul>
+                <li>Week 5: initial module list, basic styling and data retrieval</li>
+                <li>Week 6: Classes and data organization, CSS animations, bug fixing</li>
+                <li>Week 7: testing and final CSS corrections </li>
+            </ul>
+        </section>
+        <section>
+            <h2>9.	Link to a Trello board </h2>
+            <ul><li><a href="https://trello.com/b/JdLGWjja/wdd-330-project-board">WDD 330 Project Board | Trello</a></li></ul>
+        </section>
+    </main>
+    <footer>&copy;2024 Santiago A. Chaparro | WDD 330 - Web Frontend Development II</footer>
+</body>
+</html>
