@@ -1,0 +1,71 @@
+:root {
+    font-family: "Poppins", sans-serif;
+    --primary-color: #777;
+    --secondary-color: #333;
+    --detail-color: #8E0606;
+    --font-bright: #fff;
+    --font-dark: #000;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--font-bright);
+    max-width: 1200px;
+    margin: auto;
+}
+
+.divider {
+    border-bottom: 3px solid var(--detail-color);
+}
+
+h1, h2 {
+    background-color: var(--secondary-color);
+    padding: .5em;
+}
+
+h3 {
+    padding: .5em;
+}
+
+p {
+    padding: 0 1rem;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+}
+
+/* ========== LINKS ========== */
+a {
+    color: var(--detail-color);
+}
+
+/* ========== CARDS ========== */
+.cards {
+    margin: auto;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    padding: 2em .5em;
+}
+
+.card picture {
+    max-width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card p {
+    text-align: center;
+    box-sizing: border-box;
+    position: absolute;
+    padding: 0 .5em;
+    margin: 0;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
