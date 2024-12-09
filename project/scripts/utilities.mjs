@@ -1,3 +1,6 @@
+// import * as fs from 'node:fs/promises';
+// import path from 'node:path';
+
 export function qs(selector, parent = document) {
     return parent.querySelector(selector);
 }
@@ -48,3 +51,19 @@ export function convertToJson(res) {
     }
   }
 }
+
+// export function loadEnv() { 
+//   const envPath = path.resolve(__dirname, '.env')
+//   const envFile = fs.readFileSync(envPath, 'utf8')
+//   const envVariables = envFile.split('\n')
+  
+//   envVariables.forEach(variable => { 
+//     const [key, value] = variable.split('=') 
+    
+//     if (key && value) { 
+//       process.env[key.trim()] = value.trim()
+//     } 
+//   }) 
+// } 
+
+// loadEnv();
