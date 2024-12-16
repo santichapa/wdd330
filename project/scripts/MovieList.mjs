@@ -1,4 +1,6 @@
-import { renderListWithTemplate } from "./utilities.mjs"
+import MovieDetails from "./MovieDetails.mjs"
+import { renderListWithTemplate, setClick } from "./utilities.mjs"
+
 
 export default class MovieList {
     constructor(genres, dataSource, parentSelector ) {
@@ -8,21 +10,38 @@ export default class MovieList {
     }
 
     async init() {
-            const movieList = this.dataSource.getData()
+            const movieList = await this.dataSource.getMovies("action")
             this.renderList(movieList)
     }
 
-    movieListTemplate() {
+    movieListTemplate(movie) {
         return `
             <section class="card">
                 <picture>
-                    <img src="https://placehold.co/200x300" alt="movie name poster">
-                    <p>The Adventures of the rain dance Maggie <span>(year)</span></p>
+                    <img src="${movie.imageSet.verticalPoster.w240}" alt="A Poster of ${movie.title}">
+                    <p>${movie.title} <span>(${movie.releaseYear})</span></p>
                 </picture>
             </section>`
     }
 
     renderList(movieList) {
-        renderListWithTemplate(this.movieListTemplate, this.parentSelector, movieList)
+        renderListWithTemplate(this.movieListTemplate, this.parentSelector, movieList.shows, "afterbegin", true)
+        const movieCards = document.querySelectorAll(".cards")
+        movieCards.forEach((card, index) => {
+            card.addEventListener("click", () => {
+                const movieId = "tt1375666" //this.getMovieId()
+                const details = new MovieDetails(movieId, this.dataSource)
+                details.init()
+            })
+            // setClick(".card", () => {
+            //     const movieId = "tt1375666" //this.getMovieId()
+            //     const details = new MovieDetails(movieId, this.dataSource)
+            //     details.init()
+            //     alertMessage("movie clicked")
+            // })
+        });
+    }
+    getMovieId(movie) {
+        return
     }
 }

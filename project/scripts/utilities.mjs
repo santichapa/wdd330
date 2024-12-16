@@ -5,6 +5,7 @@ export function qs(selector, parent = document) {
     return parent.querySelector(selector);
 }
 
+// set an event listener for click and touchend events
 export function setClick(selector, callback) {
     qs(selector).addEventListener("touchend", (event) => {
         event.preventDefault();
@@ -21,6 +22,7 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
     parentElement.insertAdjacentHTML(position, htmlList.join(""))
 }
 
+// display an alert message at the top of the page
 export function alertMessage(message, scroll=true) {
   const alert = document.createElement('div');
   alert.classList.add("alert")
@@ -52,18 +54,10 @@ export function convertToJson(res) {
   }
 }
 
-// export function loadEnv() { 
-//   const envPath = path.resolve(__dirname, '.env')
-//   const envFile = fs.readFileSync(envPath, 'utf8')
-//   const envVariables = envFile.split('\n')
-  
-//   envVariables.forEach(variable => { 
-//     const [key, value] = variable.split('=') 
-    
-//     if (key && value) { 
-//       process.env[key.trim()] = value.trim()
-//     } 
-//   }) 
-// } 
+export function getLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
 
-// loadEnv();
+export function setLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}

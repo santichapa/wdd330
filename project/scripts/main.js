@@ -1,15 +1,30 @@
+import GenreList from "./GenreList.mjs";
 import MovieData from "./MovieData.mjs";
+import MovieList from "./MovieList.mjs";
+import { alertMessage, setLocalStorage } from "./utilities.mjs";
 
-// const key = import.meta.env.key
-const url = 'https://streaming-availability.p.rapidapi.com/shows/search/filters?country=us&series_granularity=show&genres=action&order_direction=asc&order_by=rating&output_language=en&show_type=movie';
-const options = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': `${process.env.API_KEY}`,
-		'x-rapidapi-host': 'streaming-availability.p.rapidapi.com'
-	}
-};
+const keyInput = document.querySelector("#key-input")
+
 
 const dataSource = new MovieData()
+const parentSelector = document.querySelector(".cards")
 
-console.log(dataSource.getData(url, options))
+const genresElement = document.querySelector(".movie-genres")
+const genres = new GenreList(dataSource, genresElement)
+genres.init()
+
+const newMovieList = new MovieList("action", dataSource, parentSelector)
+newMovieList.init()
+
+
+
+
+const apiKeyBtn = document.querySelector("#apiKeyBtn")
+apiKeyBtn.addEventListener("click", saveKey)
+
+function saveKey() {
+	const keyInput = document.querySelector("#key-input")
+	if (keyInput.value !== null) {
+		setLocalStorage("api-key", keyInput.value)
+	}
+}
