@@ -1,4 +1,4 @@
-import GenreList from "./GenreList.mjs";
+import FilterList from "./FilterList.mjs";
 import MovieData from "./MovieData.mjs";
 import MovieList from "./MovieList.mjs";
 import { alertMessage, setLocalStorage } from "./utilities.mjs";
@@ -9,14 +9,18 @@ const keyInput = document.querySelector("#key-input")
 const dataSource = new MovieData()
 const parentSelector = document.querySelector(".cards")
 
-const genresElement = document.querySelector(".movie-genres")
-const genres = new GenreList(dataSource, genresElement)
-genres.init()
 
-const newMovieList = new MovieList("action", dataSource, parentSelector)
-newMovieList.init()
+const filtersElement = document.querySelector(".movie-filters")
+const filters = new FilterList(dataSource, filtersElement)
+filters.init()
 
 
+
+const filterButton = document.querySelector("#filter-button")
+filterButton.addEventListener("click", () => {
+	const newMovieList = new MovieList(filters.selectedGenres.join(","), filters.selectedStreamings.join(","), dataSource, parentSelector)
+	newMovieList.init()
+})
 
 
 const apiKeyBtn = document.querySelector("#apiKeyBtn")
@@ -28,3 +32,5 @@ function saveKey() {
 		setLocalStorage("api-key", keyInput.value)
 	}
 }
+
+alertMessage("Select your desired genres and streaming platforms, then click on 'Filter Movies'.")

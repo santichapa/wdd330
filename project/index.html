@@ -19,51 +19,9 @@
             <label>Rapid API Key: <input type="text" id="key-input"></label>
             <button id="apiKeyBtn">Save Key in Local Storage</button>
         </form>
-        <dialog>
-            <div id="movie-details"></div>
-        </dialog>
-        <!-- <div id="movie-details">
-            <button id="closeModal" class="close-btn">✕</button>
-            <img src="https://placehold.co/200x300" alt="A poster of '${movie.title}'">
-            <h2>${movie.title}</h2>
-            <table>
-                <tr>
-                    <th>Release Date: </th>
-                    <td>${movie.release_date}</td>
-                </tr>
-                <tr>
-                    <th>Runtime </th>
-                    <td>${movie.runtime} Minutes</td>
-                </tr>
-                <tr>
-                    <th>Genres: </th>
-                    <td>${movie.genres}</td>
-                </tr>
-                <tr>
-                    <th>Language: </th>
-                    <td>${movie.original_language}</td>
-                </tr>
-                <tr>
-                    <th>Average Rating: </th>
-                    <td>${movie.vote_average}</td>
-                </tr>
-                <tr>
-                    <th>Produced By: </th>
-                    <td>${movie.production_companies}</td>
-                </tr>
-            </table>
-            <div class="overview">
-                <h3>Overview</h3>
-                <p>${movie.overview} Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Error officia perferendis corrupti distinctio deserunt 
-                    quidem quam animi accusamus qui sint blanditiis asperiores, 
-                    corporis molestiae delectus, illum ipsum harum unde numquam 
-                    ut nihil dolorem nobis optio ipsam dolorum. Ea facilis 
-                    minima, sit earum quidem dolorum in?</p>
-            </div>
-        </div> -->
-        <section class="movie-genres"><h2>Movie Genres</h2></section>
-        <section class="streaming-services"><h2>Movie Streaming Service</h2></section>
+        <dialog></dialog>
+        <section class="movie-filters"></section>
+        <button id="filter-button">Filter Movies</button>
         
         <div class="cards">
             <section class="card">
@@ -98,7 +56,7 @@
             </section>
             <section class="card">
                 <picture>
-                    <img src="https://placehold.co/200x300" alt="movie name poster">
+                    <img src="https://placehold.co/230x340" alt="movie name poster">
                     <p>Movie Name (year)</p>
                 </picture>
             </section>
@@ -114,7 +72,7 @@
     <footer>
         &copy;2024 Santiago A. Chaparro | WDD 330 - Web Frontend Development II | APIs: 
         <a href="https://rapidapi.com/movie-of-the-night-movie-of-the-night-default/api/streaming-availability">Streaming Availability API</a> -
-        <a href="https://rapidapi.com/dolphinnoirbusiness/api/moviedatabase8">MovieDatabase API</a>
+        <a href="https://rapidapi.com/BasedAPI/api/movie-database-by-based-api">Movie Database by Based API</a>
     </footer>
 </body>
 </html>

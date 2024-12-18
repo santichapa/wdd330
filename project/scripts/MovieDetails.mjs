@@ -2,44 +2,58 @@ import { alertMessage } from "./utilities.mjs"
 
 function detailsTemplate(movie) {
     return `
+    <div id="movie-details">
         <button id="closeModal" class="close-btn">✕</button>
-        <img src="https://placehold.co/200x300" alt="A poster of '${movie.title}'">
-        <h2>${movie.title}</h2>
+        <img src="${movie.Poster}" alt="A poster of '${movie.Title}'">
+        <h2>${movie.Title}</h2>
         <table>
             <tr>
+                <th>Rated: </th>
+                <td>${movie.Rated}</td>
+            </tr>
+            <tr>
                 <th>Release Date: </th>
-                <td>${movie.release_date}</td>
+                <td>${movie.Released}</td>
             </tr>
             <tr>
                 <th>Runtime: </th>
-                <td>${movie.runtime} Minutes</td>
+                <td>${movie.Runtime}</td>
             </tr>
             <tr>
                 <th>Genres: </th>
-                <td>${movie.genres}</td>
+                <td>${movie.Genre}</td>
+            </tr>
+            <tr>
+                <th>Actors: </th>
+                <td>${movie.Actors}</td>
+            </tr>
+            <tr>
+                <th>Director: </th>
+                <td>${movie.Director}</td>
+            </tr>
+            <tr>
+                <th>Writer: </th>
+                <td>${movie.Writer}</td>
             </tr>
             <tr>
                 <th>Language: </th>
-                <td>${movie.original_language}</td>
+                <td>${movie.Language}</td>
             </tr>
             <tr>
-                <th>Average Rating: </th>
-                <td>${movie.vote_average}</td>
+                <th>Metascore/IMDb Rating: </th>
+                <td>${movie.Metascore}/${movie.imdbRating}</td>
             </tr>
             <tr>
-                <th>Produced By: </th>
-                <td>${movie.production_companies}</td>
+                <th>Awards: </th>
+                <td>${movie.Awards}</td>
             </tr>
         </table>
         <div class="overview">
             <h3>Overview</h3>
-            <p>${movie.overview} Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Error officia perferendis corrupti distinctio deserunt 
-                quidem quam animi accusamus qui sint blanditiis asperiores, 
-                corporis molestiae delectus, illum ipsum harum unde numquam 
-                ut nihil dolorem nobis optio ipsam dolorum. Ea facilis 
-                minima, sit earum quidem dolorum in?</p>
-        </div>`
+            <p>${movie.Plot}</p>
+        </div>
+    </div>`
+        
 }
 
 export default class MovieDetails {
