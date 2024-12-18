@@ -15,6 +15,12 @@ const filters = new FilterList(dataSource, filtersElement)
 filters.init()
 
 
+const filtersHamBtn = document.getElementById('filters-hamBtn')
+filtersHamBtn.addEventListener('click', function() { 
+	const movieFilters = document.querySelector('.movie-filters')
+	movieFilters.classList.toggle('open') 
+	filtersHamBtn.classList.toggle('open')
+})
 
 const filterButton = document.querySelector("#filter-button")
 filterButton.addEventListener("click", () => {
@@ -33,4 +39,4 @@ function saveKey() {
 	}
 }
 
-alertMessage("Select your desired genres and streaming platforms, then click on 'Filter Movies'.")
+alertMessage("Select your desired genres and streaming platforms, then click on 'Filter Movies'. Also, You can click on a movie poster to see more details. ")
